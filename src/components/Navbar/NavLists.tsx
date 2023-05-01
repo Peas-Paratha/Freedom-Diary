@@ -2,7 +2,7 @@ import React from "react";
 
 const NavLists = () => {
   return (
-    <ul className="flex gap-3 font-semibold">
+    <ul className="gap-3 font-semibold hidden">
       <li>Timeline</li>
       <li>Roadmap</li>
     </ul>
