@@ -2,13 +2,23 @@ import React from "react";
 import { FiArrowLeft } from "react-icons/fi";
 import TitleBox from "../Timeline/TitleBox";
 
-const EventDetails = () => {
+interface Props {
+  hideDetails: () => void;
+  displayDetails: boolean;
+}
+
+const EventDetails = ({ hideDetails, displayDetails }: Props) => {
+  console.log("displayDetails", displayDetails);
   return (
-    <div className="absolute left-0 right-0 bg-[#F5F5F5] z-20 -top-[46px] bottom-0">
-      <div className="text-lg mb-[18px]">
+    <div
+      className={`absolute left-0 right-0 bg-[#F5F5F5] z-20 -top-[46px] bottom-0 transition-transform duration-500 ${
+        displayDetails ? "translate-x-0" : "translate-x-[100vw]"
+      }`}
+    >
+      <div className="text-lg mb-[18px]" onClick={hideDetails}>
         <FiArrowLeft />
       </div>
-      <TitleBox />
+      <TitleBox shadow="none" />
       <div className="text-sm leading-[16px] mb-7">
         Source : https://thisisthesourceinlinkversion.com
       </div>

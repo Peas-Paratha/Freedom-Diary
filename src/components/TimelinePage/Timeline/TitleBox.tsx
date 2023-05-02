@@ -2,10 +2,16 @@ import React from "react";
 import { GoVerified } from "react-icons/go";
 import Tag from "./Tag";
 
-const TitleBox = () => {
+interface Props {
+  shadow: string;
+  showDetails?: () => void;
+}
+
+const TitleBox = ({ shadow, showDetails }: Props) => {
   return (
     <div
-      className={`relative shadow-[0px_4px_4px_0px_rgba(0,0,0,0.05)] rounded-lg py-[18px] px-[15px]`}
+      className={`relative shadow-[${shadow}] border-2 border-red-500 rounded-lg py-[18px] px-[15px]`}
+      onClick={showDetails}
     >
       <div className="flex pb-2 justify-start items-center">
         <div className="text-sm font-semibold leading-4">Title of Events</div>

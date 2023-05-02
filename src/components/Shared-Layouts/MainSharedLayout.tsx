@@ -4,7 +4,7 @@ import Navbar from "../Navbar/Navbar";
 
 const MainSharedLayout = () => {
   return (
-    <div className="bg-[#F5F5F5] px-8 py-11 sm:px-12 sm:py-11 min-h-screen">
+    <div className="bg-[#F5F5F5] px-8 py-11 sm:px-12 sm:py-11 min-h-screen overflow-hidden">
       <Navbar />
       <Outlet />
     </div>
